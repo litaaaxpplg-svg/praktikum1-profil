@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    color: #252b35;
+}
+
+/* HEADER */
+.site-header {
+    width: 100%;
+    padding: 24px 8%;
+    background: #172337;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #aeb8c5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    color: #f5f7fa;
+    letter-spacing: 0.5px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    color: #dce2e9;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #9eafc2;
+}
+
+/* TENTANG */
+.hero {
+    width: 86%;
+    max-width: 1100px;
+    margin: 75px auto;
+    padding: 55px;
+    background: #ffffff;
+    border: 1px solid #d6dce3;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    box-shadow: 12px 12px 0 #dce1e7;
+}
+
+.hero img {
+    width: 245px;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #718096;
+    padding: 6px;
+    background: #ffffff;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 1px #46566b;
+}
+
+.hero div {
+    max-width: 680px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #1d2735;
+    margin-bottom: 20px;
+}
+
+.hero h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #718096;
+    margin-top: 18px;
+}
+
+.hero p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #626b76;
+    text-align: justify;
+    margin-bottom: 13px;
+}
+
+/* KEAHLIAN */
+.skills {
+    width: 86%;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 70px 0 90px;
+    text-align: center;
+    counter-reset: card;
+}
+
+.skills h2,
+.gallery h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
+    color: #1d2735;
+    letter-spacing: 0.5px;
+}
+
+.skills h2::after,
+.gallery h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    background: #718096;
+    margin: 15px auto 45px;
+}
+
+.card {
+    width: 30.5%;
+    min-height: 245px;
+    margin: 1%;
+    padding: 34px 30px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #d7dde5;
+    position: relative;
+    overflow: hidden;
+    transition: 0.35s ease;
+}
+
+.card::before {
+    counter-increment: card;
+    content: "0" counter(card);
+    position: absolute;
+    top: 22px;
+    right: 25px;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #718096;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #718096;
+    transform: scaleX(0.25);
+    transform-origin: left;
+    transition: 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #718096;
+    box-shadow: 10px 10px 0 #dce1e7;
+}
+
+.card:hover::after {
+    transform: scaleX(1);
+}
+
+.card h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: normal;
+    color: #263548;
+    margin: 25px 45px 18px 0;
+}
+
+.card h3::after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: #718096;
+    margin-top: 12px;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #68717c;
+    text-align: left;
+}
+
+/* PORTOFOLIO */
+.gallery {
+    width: 86%;
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding: 65px 0 70px;
+    text-align: center;
+}
+
+figure {
+    width: 30.5%;
+    margin: 1%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid #d5dce4;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+figure::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 42px;
+    height: 42px;
+    background: #172337;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    z-index: 2;
+}
+
+figure:nth-of-type(1)::before {
+    content: "01";
+}
+
+figure:nth-of-type(2)::before {
+    content: "02";
+}
+
+figure:nth-of-type(3)::before {
+    content: "03";
+}
+
+figure img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s ease;
+}
+
+figure:hover {
+    transform: translateY(-10px);
+    border-color: #718096;
+    box-shadow: 10px 10px 0 #dce1e7;
+}
+
+figure:hover img {
+    transform: scale(1.06);
+}
+
+figcaption {
+    min-height: 105px;
+    padding: 22px 23px;
+    background: #ffffff;
+    color: #263548;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.4;
+    border-top: 3px solid #718096;
+}
+
+figcaption::before {
+    content: "PROJECT";
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #718096;
+    margin-bottom: 8px;
+}
+
+figcaption::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #718096;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+figure:hover figcaption::after {
+    width: 55px;
+}
+
+/* FOOTER / WATERMARK */
+.site-footer {
+    width: 100%;
+    margin-top: 20px;
+    padding: 38px 20px;
+    background: #172337;
+    color: #dce2e9;
+    text-align: center;
+    border-top: 3px solid #718096;
+}
+
+.site-footer::before {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background: #718096;
+    margin: 0 auto 18px;
+}
+
+.site-footer p {
+    margin: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.site-footer p:first-child {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    color: #ffffff;
+    letter-spacing: 0.3px;
+}
+
+.site-footer p:last-child {
+    color: #aeb8c5;
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 20px;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    nav {
+        gap: 22px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        width: 90%;
+        margin: 45px auto;
+        padding: 40px 25px;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        box-shadow: 7px 7px 0 #dce1e7;
+    }
+
+    .hero img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .hero div {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .hero h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .skills {
+        width: 90%;
+    }
+
+    .skills h2,
+    .gallery h2 {
+        font-size: 30px;
+    }
+
+    .card {
+        width: 100%;
+        margin: 8px 0;
+        min-height: auto;
+        padding: 27px;
+    }
+
+    .gallery {
+        width: 90%;
+    }
+
+    figure {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    figure img {
+        height: 220px;
+    }
+
+    figcaption {
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .site-footer {
+        margin-top: 10px;
+        padding: 32px 15px;
+    }
+}
